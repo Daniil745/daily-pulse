@@ -1,4 +1,4 @@
-#        Daily Pulse - Temperature Monitoring System
+# Daily Pulse - Temperature Monitoring System
 
 <div align="center">
 
@@ -8,66 +8,66 @@
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-yellow.svg)
 
-**Full-stack веб-приложение для управления метеорологическими данными**
+**Full-stack web application for managing meteorological data**
 
-[Функциональность](#-функциональность) • [Технологии](#-технологии) • [Установка](#-установка) • [Архитектура](#-архитектура)
+[Features](#features) • [Technologies](#technologies) • [Installation](#installation) • [Architecture](#architecture)
 
 </div>
 
-## О проекте
+## About the Project
 
-**Daily Pulse** — полнофункциональное веб-приложение для сбора, хранения и анализа температурных данных. Проект демонстрирует полный цикл разработки modern web-приложения от backend API до responsive интерфейса.
+**Daily Pulse** is a fully functional web application for collecting, storing, and analyzing temperature data. The project demonstrates the full development cycle of a modern web application from backend API to responsive interface.
 
-### Реальные достижения
--  **Полный стек разработки** - от базы данных до пользовательского интерфейса
--  **Контейнеризация** - готовое к развертыванию Docker-решение
--  **RESTful API** - чистый и документированный API дизайн
--  **Производительность** - оптимизированные запросы к базе данных
-
----
-
-## Функциональность
-
-### Управление данными
-- **Добавление записей** о температуре с валидацией данных
-- **Просмотр архива** с сортировкой по дате
-- **Редактирование и удаление** записей в реальном времени
-- **Поиск и фильтрация** по датам и регионам
-
-### Аналитика
-- **Поиск минимальной температуры** за указанную дату
-- **Определение абсолютного минимума** среди всех записей
-- **Статистика** по всем метеорологическим данным
-- **Визуализация** данных в карточном формате
-
-### Пользовательский опыт
-- **Адаптивный интерфейс** с modern CSS дизайном
-- **Интуитивная навигация** без перезагрузки страницы
-- **Валидация форм** на клиенте и сервере
-- **Уведомления** о результатах операций
+### Real Achievements
+-   **Full-stack development** - from database to user interface
+-   **Containerization** - Docker-ready solution for deployment
+-   **RESTful API** - clean and documented API design
+-   **Performance** - optimized database queries
 
 ---
 
-## 🛠 Технологии
+## Features
+
+### Data Management
+-   **Add records** of temperature with data validation
+-   **View archive** with date sorting
+-   **Edit and delete** records in real-time
+-   **Search and filter** by dates and regions
+
+### Analytics
+-   **Find minimum temperature** for a specified date
+-   **Determine absolute minimum** among all records
+-   **Statistics** for all meteorological data
+-   **Data visualization** in card format
+
+### User Experience
+-   **Responsive interface** with modern CSS design
+-   **Intuitive navigation** without page reloads
+-   **Form validation** on client and server
+-   **Notifications** about operation results
+
+---
+
+## 🛠 Technologies
 
 ### Backend
-- **Runtime**: Node.js 20.18.0
-- **Database**: MongoDB с Mongoose ODM
-- **Валидация**: Нативная валидация Mongoose
+-   **Runtime**: Node.js 20.18.0
+-   **Database**: MongoDB with Mongoose ODM
+-   **Validation**: Native Mongoose validation
 
 ### Frontend
-- **Язык**: Vanilla JavaScript (ES6+)
-- **Стили**: CSS3 с Grid и Flexbox
-- **Архитектура**: MVC-паттерн на клиенте
-- **Адаптивность**: Mobile-first дизайн
+-   **Language**: Vanilla JavaScript (ES6+)
+-   **Styling**: CSS3 with Grid and Flexbox
+-   **Architecture**: MVC pattern on the client
+-   **Responsiveness**: Mobile-first design
 
 ### Infrastructure
-- **Контейнеризация**: Docker + Docker Compose
-- **База данных**: MongoDB в отдельном контейнере
+-   **Containerization**: Docker + Docker Compose
+-   **Database**: MongoDB in a separate container
 
 ---
 
-### Модель данных
+### Data Model
 ```javascript
 const temperatureSchema = {
     region: { type: String, required: true, index: true },
@@ -78,73 +78,72 @@ const temperatureSchema = {
 };
 ```
 
-### API Дизайн
-- **RESTful принципы** - CRUD операции через HTTP методы
-- **Единый формат ответа** - { success, data, error }
-- **Статус коды** - правильное использование HTTP статусов
-- **Валидация** - проверка данных на всех уровнях
+### API Design
+-   **RESTful principles** - CRUD operations via HTTP methods
+-   **Unified response format** - { success, data, error }
+-   **Status codes** - proper use of HTTP statuses
+-   **Validation** - data validation on all levels
 
 ---
 
-##  Производительность
+## Performance
 
-### Оптимизации
-- **Индексация MongoDB** - быстрый поиск по дате и температуре
-- **Кэширование браузера** - статические ресурсы
-- **Эффективные запросы** - проекция и лимиты данных
-- **Асинхронные операции** - non-blocking I/O
+### Optimizations
+-   **MongoDB Indexing** - fast search by date and temperature
+-   **Browser Caching** - static resources
+-   **Efficient Queries** - data projection and limits
+-   **Asynchronous Operations** - non-blocking I/O
 
 ---
 
-##  Установка и запуск
+## Installation and Launch
 
-### Быстрый старт с Docker
+### Quick Start with Docker
 ```bash
-# Клонирование репозитория
+# Clone the repository
 git clone https://github.com/Daniil745/daily-pulse.git
 cd daily-pulse
 
-# Запуск приложения
+# Launch the application
 docker-compose up -d --build
 
-# Приложение доступно по адресу:
+# Application available at:
 # http://localhost:3000
 ```
 
-
 ---
 
-##  API Endpoints
+## API Endpoints
 
-### Основные endpoints
+### Main Endpoints
 ```http
-GET    /api/temperature                    # Получить все записи
-POST   /api/temperature                    # Создать новую запись
-GET    /api/temperature/:id               # Получить запись по ID
-PUT    /api/temperature/:id               # Обновить запись
-DELETE /api/temperature/:id               # Удалить запись
+GET    /api/temperature                    # Get all records
+POST   /api/temperature                    # Create a new record
+GET    /api/temperature/:id               # Get record by ID
+PUT    /api/temperature/:id               # Update record
+DELETE /api/temperature/:id               # Delete record
 ```
 
-### Аналитические endpoints
+### Analytical Endpoints
 ```http
-GET    /api/temperature/analytics/coldest    # Абсолютный минимум
-GET    /api/temperature/search/by-date/:date # Поиск по дате
-GET    /api/temperature/analytics/stats      # Статистика
-POST   /api/temperature/init-test-data       # Инициализация тестовыми данными
+GET    /api/temperature/analytics/coldest    # Absolute minimum
+GET    /api/temperature/search/by-date/:date # Search by date
+GET    /api/temperature/analytics/stats      # Statistics
+POST   /api/temperature/init-test-data       # Initialize test data
 ```
 
-### Пример использования
+### Usage Example
 ```javascript
-// Получение всех записей
+// Get all records
 const response = await fetch('/api/temperature');
 const { success, data } = await response.json();
 
-// Добавление новой записи
+// Add a new record
 await fetch('/api/temperature', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-        region: "Москва",
+        region: "Moscow",
         temperature: -5.2,
         precipitation: 12.5,
         date: "2024-01-15"
@@ -154,63 +153,63 @@ await fetch('/api/temperature', {
 
 ---
 
-##  Ключевые особенности реализации
+## Key Implementation Features
 
 ### Backend Excellence
-- **Чистая архитектура** - разделение ответственности слоев
-- **Обработка ошибок** - централизованный error handling
-- **Валидация данных** - на уровне схемы и бизнес-логики
-- **Логирование** - детальное логирование операций
+-   **Clean Architecture** - separation of responsibility across layers
+-   **Error Handling** - centralized error handling
+-   **Data Validation** - at schema and business logic levels
+-   **Logging** - detailed operation logging
 
 ### Frontend Quality
-- **Modern JavaScript** - ES6+ синтаксис, async/await
-- **Responsive Design** - адаптация под все устройства
-- **User Experience** - интуитивный интерфейс с feedback
-- **Производительность** - оптимизированные DOM-операции
+-   **Modern JavaScript** - ES6+ syntax, async/await
+-   **Responsive Design** - adaptation for all devices
+-   **User Experience** - intuitive interface with feedback
+-   **Performance** - optimized DOM operations
 
 ### DevOps Ready
-- **Dockerized** - изолированные сервисы
-- **Environment Configuration** - гибкая конфигурация
-- **Health Checks** - мониторинг состояния сервисов
-- **Logging** - структурированное логирование
+-   **Dockerized** - isolated services
+-   **Environment Configuration** - flexible configuration
+-   **Health Checks** - service status monitoring
+-   **Logging** - structured logging
 
 ---
 
-## Потенциал для масштабирования
+## Scaling Potential
 
-### Ближайшие улучшения
-- **Аутентификация** - JWT-based auth system
-- **Пагинация** - для больших объемов данных
-- **Кэширование** - Redis для частых запросов
-- **Тестирование** - unit и integration tests
+### Near-term Improvements
+-   **Authentication** - JWT-based auth system
+-   **Pagination** - for large data volumes
+-   **Caching** - Redis for frequent queries
+-   **Testing** - unit and integration tests
 
-### Долгосрочное развитие
-- **Real-time updates** - WebSocket соединения
-- **Геолокация** - карты и визуализация данных
-- **Advanced аналитика** - ML для прогнозирования
-- **Микросервисы** - разделение на специализированные сервисы
-
----
-
-##  Разработчик
-
-**Daniil745**  
-
-### Технический стек
-- **Backend**: Node.js, MongoDB, REST API
-- **Frontend**: Modern JavaScript, CSS3, Responsive Design
-- **DevOps**: Docker, Containerization, Deployment
-- **Database**: MongoDB, Data Modeling, Optimization
-
-### Контакты
-- **GitHub**: [Daniil745](https://github.com/Daniil745)
-- **Email**: askdaniil02@gmail.com
+### Long-term Development
+-   **Real-time updates** - WebSocket connections
+-   **Geolocation** - maps and data visualization
+-   **Advanced Analytics** - ML for forecasting
+-   **Microservices** - split into specialized services
 
 ---
 
-## 📄 Лицензия
+## Developer
 
-MIT License - смотрите файл [LICENSE](LICENSE) для деталей.
+**Daniil745**
+
+### Technical Stack
+-   **Backend**: Node.js, MongoDB, REST API
+-   **Frontend**: Modern JavaScript, CSS3, Responsive Design
+-   **DevOps**: Docker, Containerization, Deployment
+-   **Database**: MongoDB, Data Modeling, Optimization
+
+### Contacts
+-   **GitHub**: [Daniil745](https://github.com/Daniil745)
+-   **Email**: askdaniil02@gmail.com
+
+---
+
+## 📄 License
+
+MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
